@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Primera página web con JavaScript" >
+    <meta name="robots" content="NOFOLLOW" >
+    <meta name="Author" content="Guillermo" >
+    <meta name="keywords" content="Trabajo Final" >
+    <meta name="revisit-after" content="2 days" >
+    <meta name="category" content="Trabajo Final" >
+
+    <title>¡Ven a Panamá!</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/Estilos.css">
+
+</head>
+
+<body>
+    <header>
+        <p class="encabezado">¡VEN A PANAMÁ!</p>
+        <nav>
+            <ul class="menu">
+                <li><a class="active" href="#">Inicio</a></li>
+                <li><a href="views/galeria.html">Galería</a></li>
+                <li><a href="views/presupuesto.html">Presupuesto</a></li>
+                <li><a href="views/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="div_seccion_principal">
+        <h1>Sitios turísticos en Panamá</h1>
+
+        <section>
+            <h2>Lugares Recomendados</h2>
+            <div class="img_section1">
+                <a href="views/galeria.html#islaEscudo">
+                    <figure>
+                        <img src="asset/img/EscudoVeraguas.jpg" alt="Isla Escudo de Veraguas en Bocas del Toro"
+                            class="img_categoria">
+                        <figcaption class="figcap">
+                            <h3>Isla Escudo de Veraguas en Bocas del Toro</h3>
+                        </figcaption>
+                    </figure>
+                </a>
+
+                <a href="views/galeria.html#santaCatalina">
+                    <figure>
+                        <img src="asset/img/SantaCatalinaHotel.jpg" alt="Playa Santa Catalina en Veraguas"
+                            class="img_categoria">
+                        <figcaption class="figcap">
+                            <h3>Playa Santa Catalina en Veraguas</h3>
+                        </figcaption>
+                    </figure>
+                </a>
+
+                <a href="views/galeria.html#molas">
+                    <figure>
+                        <img src="asset/img/GunaYala.jpg" alt="Molas en San Blas" class="img_categoria">
+                        <figcaption class="figcap">
+                            <h3>Molas en San Blas</h3>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Provincias</h2>
+            <div class="img_section1">
+                <a href="views/galeria.html#islaEscudo">
+                    <figure>
+                        <img src="asset/img/BocasDelToro.jpg" alt="Casa en Bocas del Toro" class="img_categoria">
+                        <figcaption class="figcap">
+                            <h3>Bocas del Toro</h3>
+                        </figcaption>
+                    </figure>
+                </a>
+
+                <a href="views/galeria.html#santaCatalina">
+                    <figure>
+                        <img src="asset/img/islaCoiba.jpg" alt="Playa en Isla Coiba" class="img_categoria">
+                        <figcaption class="figcap">
+                            <h3>Veraguas</h3>
+                        </figcaption>
+                    </figure>
+                </a>
+
+                <a href="views/galeria.html#molas">
+                    <figure>
+                        <img src="asset/img/SanBlas.jpg" alt="Mar en San Blas" class="img_categoria">
+                        <figcaption class="figcap">
+                            <h3>San Blas</h3>
+                        </figcaption>
+                    </figure>
+                </a>
+
+                <a href="views/galeria.html#islaGrande">
+                    <figure>
+                        <img src="asset/img/IslaGrande.jpg" alt="Isla en Colón" class="img_categoria">
+                        <figcaption class="figcap">
+                            <h3>Colón</h3>
+                        </figcaption>
+                    </figure>
+                </a>
+
+                <a href="views/galeria.html#islaContadora">
+                    <figure>
+                        <img src="asset/img/IslaContadora.jpg" alt="Isla Contadora en Panamá" class="img_categoria">
+                        <figcaption class="figcap">
+                            <h3>Panamá</h3>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Actividades</h2>
+            <div class="img_section1">
+                <a href="views/galeria.html#actividades">
+                    <figure>
+                        <img src="asset/img/Paddle.jpg" alt="Personas practicando paddle surf" class="img_categoria">
+                        <figcaption class="figcap">
+                            <h3>Paddle Surf</h3>
+                        </figcaption>
+                    </figure>
+                </a>
+
+                <a href="views/galeria.html#actividades">
+                    <figure>
+                        <img src="asset/img/PaseosBote.jpg" alt="Personas viajando en bote" class="img_categoria">
+                        <figcaption class="figcap">
+                            <h3>Paseos en Bote</h3>
+                        </figcaption>
+                    </figure>
+                </a>
+
+                <a href="views/galeria.html#actividades">
+                    <figure>
+                        <img src="asset/img/Snorkeling.jpg" alt="Persona practicando snorkeling" class="img_categoria">
+                        <figcaption class="figcap">
+                            <h3>Esnórquel</h3>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+        </section>
+
+        <section class="fondoBlanco">
+            <h2>Noticias</h2>
+            <div id="caja1"></div>
+            <input type="button" value="Ver Noticias" onclick="loadNews()">
+        </section>
+    </div>
+
+    <footer class="div_footer">
+        <div>
+            <h3>Síguenos en:</h3>
+            <a href="#"><img src="asset/logo/facebook.jpg" alt="Logo de Facebook" class="logo_redes"></a>
+            <a href="#"><img src="asset/logo/Instagram-app-logo.jpg" alt="Logo de Instagram" class="logo_redes"></a>
+            <a href="#"><img src="asset/logo/logo_youtube.jpg" alt="Logo de Youtube" class="logo_redes"></a>
+        </div>
+
+        <h4>:: ¡VEN A PANAMÁ! :: Estamos ubicados en avenida Central al lado de la Caja de Seguro Social, planta baja,
+            ciudad de Panamá, República de Panamá</h4>
+            
+        <div>
+            <h3>Aviso Legal</h3>
+            <p>En cumplimiento del deber de información estipulado en las leyes internacionales,
+                Ven a Panamá S.A., en calidad de titular del web site venapanama.com,
+                procede a comunicarles los datos identificativos exigidos por la referida norma:</p>
+            <ul class="pie">
+                <li>Nuestra denominación social es: Ven a Panamá S.A.</li>
+                <li>Representante legal: Guillermo Armuelles</li>
+                <li>ID: 8-426-000</li>
+                <li>Nuestro domicilio social se encuentra en
+                    avenida Central al lado de la Caja de Seguro Social, planta baja, ciudad de Panamá</li>
+                <li>Nuestra actividad social es venta de viajes turísticos</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="./script/trabajoFinal.js"></script>
+
+</body>
+
+</html>

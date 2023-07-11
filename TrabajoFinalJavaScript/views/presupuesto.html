@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Primera página web con JavaScript" >
+    <meta name="robots" content="NOFOLLOW" >
+    <meta name="Author" content="Guillermo" >
+    <meta name="keywords" content="Trabajo Final" >
+    <meta name="revisit-after" content="2 days" >
+    <meta name="category" content="Trabajo Final" >
+
+    <title>¡Ven a Panamá!</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../css/Estilos.css">
+
+</head>
+
+<body>
+    <header>
+        <p class="encabezado">¡VEN A PANAMÁ!</p>
+        <nav>
+            <ul class="menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a class="active" href="#">Presupuesto</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="div_formulario">
+        <h1>¡Calcula tu próximo viaje!</h1>
+
+        <form name="formulario" method="get" action="#" id="formulario">
+            <fieldset>
+                <legend>Datos de contacto</legend>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" value="">
+                <br><br>
+                <!--maxlength="15" pattern="[A-za-z]"-->
+
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" name="apellidos" id="apellidos" value="">
+                <br><br>
+
+                <label for="telefono">Teléfono de contacto:</label>
+                <input type="tel" name="telefono" id="telefono">
+                <br><br>
+                <!--pattern="[0-9]{9}" title="Teléfono debe contener 9 números"-->
+
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" name="correo" id="correo">
+                <br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Presupuesto</legend>
+                Seleccione un viaje:
+                <select name="producto" id="producto" onchange="calcularPrecio(this.value)">
+                    <option value="">Seleccione una opción</option>
+                    <option value="250">Bocas del Toro</option>
+                    <option value="100">Colón</option>
+                    <option value="50">Panamá</option>
+                    <option value="150">San Blas</option>
+                    <option value="200">Veraguas</option>
+                </select>
+                <br><br>
+
+                <label for="plazo">Plazo (en días):</label>
+                <input type="number" name="plazo" id="plazo" onchange="calcularPrecio()">
+                <br><br>
+
+                Seleccione las actividades extra que prefiera:
+                <br>
+                <input type="checkbox" name="extras" value="100" id="paddle" onchange="calcularPrecio()">Paddle Surf
+                <br>
+                <input type="checkbox" name="extras" value="150" id="bote" onchange="calcularPrecio()">
+                Paseos en Bote
+                <br>
+                <input type="checkbox" name="extras" value="50" id="esnorquel" onchange="calcularPrecio()">Esnórquel
+                <br><br>
+
+                <label for="precio">Presupuesto estimado (en USD):</label>
+                <input type="text" name="precio" id="precio">
+                <br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Aceptación de Condiciones y Envío del Presupuesto</legend>
+                <a href="políticaPrivacidad.html" target="_blank">Condiciones de Privacidad</a>
+                <br>
+                He leído las condiciones de privacidad: <input type="checkbox" name="casilla">
+                <br><br>
+
+                <input type="button" value="Enviar presupuesto" onclick="validar(this.form)">
+                <input type="reset" value="Borrar formulario">
+            </fieldset>
+        </form>
+    </div>
+
+    <footer class="div_footer">
+        <div>
+            <h3>Síguenos en:</h3>
+            <a href="#"><img src="../asset/logo/facebook.jpg" alt="Logo de Facebook" class="logo_redes"></a>
+            <a href="#"><img src="../asset/logo/Instagram-app-logo.jpg" alt="Logo de Instagram" class="logo_redes"></a>
+            <a href="#"><img src="../asset/logo/logo_youtube.jpg" alt="Logo de Youtube" class="logo_redes"></a>
+        </div>
+        <h4>:: ¡VEN A PANAMÁ! :: Estamos ubicados en avenida Central al lado de la Caja de Seguro Social, planta baja,
+            ciudad de Panamá, República de Panamá</h4>
+        <div class="ultimo_div">
+            <h3>Aviso Legal</h3>
+            <p>En cumplimiento del deber de información estipulado en las leyes internacionales,
+                Ven a Panamá S.A., en calidad de titular del web site venapanama.com,
+                procede a comunicarles los datos identificativos exigidos por la referida norma:</p>
+            <ul class="pie">
+                <li>Nuestra denominación social es: Ven a Panamá S.A.</li>
+                <li>Representante legal: Guillermo Armuelles</li>
+                <li>ID: 8-426-000</li>
+                <li>Nuestro domicilio social se encuentra en
+                    avenida Central al lado de la Caja de Seguro Social, planta baja, ciudad de Panamá</li>
+                <li>Nuestra actividad social es venta de viajes turísticos</li>
+            </ul>
+        </div>
+
+        <script src="../script/trabajoFinal.js"></script>
+
+    </footer>
+</body>
+
+</html>

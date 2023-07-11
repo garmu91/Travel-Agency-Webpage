@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./leaflet.css" />
+    <link rel="stylesheet" href="./leaflet-routing-machine-3.2.12/dist/leaflet-routing-machine.css" />
+
+</head>
+
+<body>
+
+    <div id="mapa"></div>
+
+    <script src="./leaflet.js"></script>
+    <script src="./leaflet-routing-machine-3.2.12/dist/leaflet-routing-machine.js"></script>
+
+    <script>
+        //Usamos L.map('mapa') para indicar el contenedor destino para el mapa y con
+        //setView indicamos las coordenadas, .setView([longitud, latitud], zoom);
+        var mimapa = L.map('mapa').setView([43.43101, 5.859007], 10);
+
+        //L.tileLayer será la URL que usara para cargar la imagen del mapa.
+        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            //maxZoom será el zoom máximo    
+            maxZoom: 18,
+            /*attribution son los derechos del mapa, es obligatorio rellenarlo con los
+            derechos de autor del mapa así como los de los otros proveedores usados
+            como seria MapBox*/
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> '
+        }).addTo(mimapa);
+
+        /*Aparte de capas del mapa, geográfico, político, etc. podemos añadir otras
+        capas extra a nuestro mapa, como polígonos, círculos, líneas y marcadores.*/
+        L.marker([43.43101, 5.859007], {
+            draggable: true
+            /*Los popups son usados cuando quieres mostrar una información específica
+            atada a un objeto específico de nuestro mapa.
+            Podemos atar un popup directamente a un objeto de nuestro mapa o a cualquier coordenada de este.*/
+        }).addTo(mimapa).bindPopup("La maison de <b>Beibinou!</b>");
+
+        /*Para averiguar las coordenadas de nuestro mapa podemos usar diferentes
+        formas, la más visual e intuitiva, es obtenerlas con el mapa cargado.
+        Preparamos un evento onClick que nos dé la posición tanto del pixel como la longitud y latitud.*/
+        mimapa.on("click", function (e) {
+            var pixelPosition = e.layerPoint;
+            var latLng = mimapa.layerPointToLatLng(pixelPosition);
+            alert("Position Pixel = " + pixelPosition + "\n LatLng = " + latLng);
+        });
+
+        /*Este código nos crea una ruta entre dos coordenadas, que además nos
+        permite recalcular la ruta mientras se mueve un marcador.
+        L.Routing.control inicia la función, como su nombre indica toma el control.*/
+        L.Routing.control({
+            //Waypoints son los puntos de control, los marcadores que se mostrará en dichas coordenadas
+            waypoints: [
+                L.latLng(43.43101, 5.859007),
+                L.latLng(39.487549, -0.377746)
+            ],
+            /*routeWhileDragging permite al pluging recalcular la ruta mientras se arrastra el
+            marcador, esto consumirá más ancho de banda y carga de procesado pero
+            permite dar buen feedback al usuario a la hora de desplazarse.*/
+            routeWhileDragging: true
+        }).addTo(mimapa);
+    </script>
+
+</body>
+
+</html>
